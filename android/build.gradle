@@ -9,6 +9,10 @@ buildscript {
   }
 }
 
+throw new GradleException(
+  "${project.name}: This ffmpegkit backup does not contain android binaries."
+)
+
 apply plugin: 'com.android.library'
 
 static def safePackageName(String packageName) {
