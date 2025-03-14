@@ -1,5 +1,13 @@
 # FFmpegKit for React Native
 
+## 📢 Important Information
+
+> ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️<br>
+> **Note:** This fork only supports the **ios** **full-gpl** package variant. Other package variants may not work as expected. Please ensure you use the full-gpl package configuration in your project and are on ios only.<br>
+> ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️
+
+
+
 ### 1. Features
 - Includes both `FFmpeg` and `FFprobe`
 - Supports
