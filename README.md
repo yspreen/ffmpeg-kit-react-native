@@ -29,16 +29,16 @@
 ### 2. Installation
 
 ```sh
-yarn add ffmpeg-kit-react-native
+yarn add @spreen/ffmpeg-kit-react-native
 ```
 
 #### 2.1 Packages
 
 `FFmpeg` includes built-in encoders for some popular formats. However, there are certain external libraries that needs
 to be enabled in order to encode specific formats/codecs. For example, to encode an `mp3` file you need `lame` or
-`shine` library enabled. You have to install a `ffmpeg-kit-react-native` package that has at least one of them inside.
+`shine` library enabled. You have to install a `@spreen/ffmpeg-kit-react-native` package that has at least one of them inside.
 To encode an `h264` video, you need to install a package with `x264` inside. To encode `vp8` or `vp9` videos, you need
-a `ffmpeg-kit-react-native` package with `libvpx` inside.
+a `@spreen/ffmpeg-kit-react-native` package with `libvpx` inside.
 
 `ffmpeg-kit` provides eight packages that include different sets of external libraries. These packages are named
 according to the external libraries included. Refer to the
@@ -48,7 +48,7 @@ packages and external libraries included in each one of them.
 ##### 2.1.1 Package Names
 
 The following table shows all package names and their respective API levels, iOS deployment targets defined in
-`ffmpeg-kit-react-native`.
+`@spreen/ffmpeg-kit-react-native`.
 
 <table>
 <thead>
@@ -147,7 +147,7 @@ The following table shows all package names and their respective API levels, iOS
 
 #### 2.2 Enabling Packages
 
-Installing `ffmpeg-kit-react-native` enables the `https` package by default. It is possible to enable other
+Installing `@spreen/ffmpeg-kit-react-native` enables the `https` package by default. It is possible to enable other
 packages using the instructions below.
 
 ##### 2.2.1 Enabling a Package on Android
@@ -166,17 +166,17 @@ packages using the instructions below.
 - Edit `ios/Podfile` file and add the package name as `subspec`. After that run `pod install` again.
 
     ```ruby
-    pod 'ffmpeg-kit-react-native', :subspecs => ['<package name>'], :podspec => '../node_modules/ffmpeg-kit-react-native/ffmpeg-kit-react-native.podspec'
+    pod '@spreen/ffmpeg-kit-react-native', :subspecs => ['<package name>'], :podspec => '../node_modules/@spreen/ffmpeg-kit-react-native/@spreen/ffmpeg-kit-react-native.podspec'
     ```
 
 - Note that if you have `use_native_modules!` in your `Podfile`, specifying a `subspec` may cause the following error.
-  You can fix it by defining `ffmpeg-kit-react-native` dependency before `use_native_modules!` in your `Podfile`.
+  You can fix it by defining `@spreen/ffmpeg-kit-react-native` dependency before `use_native_modules!` in your `Podfile`.
 
   ```
-  [!] There are multiple dependencies with different sources for `ffmpeg-kit-react-native` in `Podfile`:
+  [!] There are multiple dependencies with different sources for `@spreen/ffmpeg-kit-react-native` in `Podfile`:
 
-  - ffmpeg-kit-react-native (from `../node_modules/ffmpeg-kit-react-native`)
-  - ffmpeg-kit-react-native/video (from `../node_modules/ffmpeg-kit-react-native/ffmpeg-kit-react-native.podspec`)
+  - @spreen/ffmpeg-kit-react-native (from `../node_modules/@spreen/ffmpeg-kit-react-native`)
+  - @spreen/ffmpeg-kit-react-native/video (from `../node_modules/@spreen/ffmpeg-kit-react-native/@spreen/ffmpeg-kit-react-native.podspec`)
   ```
 
 #### 2.3 Enabling LTS Releases
@@ -186,7 +186,7 @@ the package name you are using.
 
 #### 2.4 LTS Releases
 
-`ffmpeg-kit-react-native` is published in two variants: `Main Release` and `LTS Release`. Both releases share the
+`@spreen/ffmpeg-kit-react-native` is published in two variants: `Main Release` and `LTS Release`. Both releases share the
 same source code but is built with different settings (Architectures, API Level, iOS Min SDK, etc.). Refer to the
 [LTS Releases](https://github.com/arthenica/ffmpeg-kit/wiki/LTS-Releases) wiki page to see how they differ from each
 other.
@@ -196,7 +196,7 @@ other.
 1. Execute FFmpeg commands.
 
     ```js
-    import { FFmpegKit } from 'ffmpeg-kit-react-native';
+    import { FFmpegKit } from '@spreen/ffmpeg-kit-react-native';
 
     FFmpegKit.execute('-i file1.mp4 -c:v mpeg4 file2.mp4').then(async (session) => {
       const returnCode = await session.getReturnCode();
